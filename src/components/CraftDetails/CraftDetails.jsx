@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 
 const CraftDetails = () => {
@@ -6,6 +7,9 @@ const CraftDetails = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>ArtScape | Details</title>
+      </Helmet>
       <div className="dark:bg-gray-100 dark:text-gray-900 container mx-auto space-y-6 sm:space-y-12  ">
         <div className="container grid grid-cols-12 mx-auto">
           <div className="flex flex-col justify-center col-span-12 m-8 bg-[#1313130D] rounded-2xl align-middle dark:bg-gray-300 bg-no-repeat bg-cover lg:col-span-6 p-8 lg:h-auto">

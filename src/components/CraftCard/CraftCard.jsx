@@ -82,19 +82,14 @@ const CraftCard = ({ craft }) => {
         </div>
       </div>
 
-      {user ? (
+      
         <NavLink to={`/craft-details/${_id}`}>
           <button className="glow-on-hover font-bold" type="button">
             View Details
           </button>
         </NavLink>
-      ) : (
-        <NavLink to="/login">
-          <button className="glow-on-hover font-bold" type="button">
-            View Details
-          </button>
-        </NavLink>
-      )}
+  
+    
     </div>
   );
 };
