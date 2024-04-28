@@ -2,7 +2,10 @@ import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { NavLink } from "react-router-dom";
 import "../CraftCard/Button.css";
-const UserArtCraftCard = ({ craft }) => {
+import Swal from 'sweetalert2';
+
+
+const UserArtCraftCard = ({ craft, userCraft, setUserCraft }) => {
   const { user } = useContext(AuthContext);
   console.log(craft);
 
@@ -22,6 +25,37 @@ const UserArtCraftCard = ({ craft }) => {
   // DELETE FUNC
   const handleDelete = _id =>{
     console.log(_id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+    
+        fetch(`http://localhost:5000/crafts/${_id}`, {
+          method: 'DELETE'
+        })
+        .then(res=>res.json())
+        .then(data =>{
+          console.log(data);
+          if(data.deletedCount>0){
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your Craft has been deleted.",
+              icon: "success"
+            } 
+          )
+          const remaining = userCraft.filter(artCraft=> artCraft._id !== _id );
+          setUserCraft([...remaining]);
+          }
+
+        })
+      }
+    });
 
   }
 

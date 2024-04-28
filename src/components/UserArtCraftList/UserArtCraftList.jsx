@@ -7,6 +7,8 @@ const UserArtCraftList = () => {
   const { user } = useContext(AuthContext);
 
   const [userCraft, setUserCraft] = useState([]);
+  const [artCrafts, setArtCrafts] =useState()
+
 
   useEffect(() => {
     fetch(`http://localhost:5000/crafts/${user?.email}`)
@@ -21,13 +23,14 @@ const UserArtCraftList = () => {
     <section className="dark:bg-gray-100 dark:text-gray-800">
     <div className="container p-6 mx-auto space-y-6 sm:space-y-12  ">
       <Helmet>
-        <title>Hoas | Home</title>
+        <title>ArtScape | My Art and Craft List</title>
       </Helmet>
 
        {/* CARDS */}
        <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
           {userCraft.map((craft) => (
-            <UserArtCraftCard key={craft._id} craft={craft}></UserArtCraftCard>
+            <UserArtCraftCard key={craft._id} craft={craft}
+            userCraft={userCraft} setUserCraft={setUserCraft}></UserArtCraftCard>
           ))}
         </div>
       </div>

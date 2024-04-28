@@ -29,6 +29,7 @@ const Home = () => {
 
   const crafts = useLoaderData();
 
+
   return (
     <section className="dark:bg-gray-100 dark:text-gray-800">
       <div className="container p-6 mx-auto space-y-6 sm:space-y-12  ">
@@ -99,7 +100,8 @@ const Home = () => {
         {/* CARDS */}
         <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
           {crafts.map((craft) => (
-            <CraftCard key={craft._id} craft={craft}></CraftCard>
+            <CraftCard key={craft._id} craft={craft}
+            ></CraftCard>
           ))}
         </div>
       
