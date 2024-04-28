@@ -34,7 +34,7 @@ const Home = () => {
     <section className="dark:bg-gray-100 dark:text-gray-800">
       <div className="container p-6 mx-auto space-y-6 sm:space-y-12  ">
         <Helmet>
-          <title>Hoas | Home</title>
+          <title>ArtScape | Home</title>
         </Helmet>
         {/* BANNER */}
         <div className=" flex bg-[#dddbf7] rounded-3xl  ">

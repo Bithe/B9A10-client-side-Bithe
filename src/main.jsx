@@ -14,6 +14,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AuthProvider from "./components/AuthProvider/AuthProvider";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import UpdateCraft from "./components/UpdateCraft/UpdateCraft";
+import CraftDetails from "./components/CraftDetails/CraftDetails";
 
 const router = createBrowserRouter([
   {
@@ -47,7 +48,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      
+
       {
         path: "/update-craft/:id",
         element: (
@@ -55,7 +56,14 @@ const router = createBrowserRouter([
             <UpdateCraft></UpdateCraft>
           </PrivateRoute>
         ),
-        loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/craft/${params.id}`),
+      },
+
+      {
+        path: "/craft-details/:id",
+        element: <CraftDetails></CraftDetails>,
+        loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`),
       },
 
       {

@@ -177,8 +177,8 @@ const Login = () => {
                   >
                     <div className="px-4 py-6 text-white md:mx-6 md:p-12">
                       <h4 className="mb-6 text-xl font-semibold">
-                        Welcome Back to Our Hoas Housing Portal!<br></br>
-                        Sign in to access your account and manage your housing
+                        Welcome Back to Our ArtScape Website!<br></br>
+                        Sign in to access your account and manage your art and craft
                         preferences seamlessly.
                       </h4>
                       <p className="text-sm">

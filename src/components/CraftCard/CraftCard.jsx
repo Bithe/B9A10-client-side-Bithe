@@ -8,6 +8,7 @@ const CraftCard = ({ craft }) => {
   console.log(craft);
 
   const {
+    _id,
     user_email,
     item_name,
     subcategory_Name,
@@ -65,13 +66,13 @@ const CraftCard = ({ craft }) => {
           </div>
         </div>
         <h2 className="  font-semibold">{item_name}</h2>
-        <h2 className="  font-semibold">Customization Needed: {customization}</h2>
+        <h2 className="  font-semibold">
+          Customization Needed: {customization}
+        </h2>
       </div>
 
       {/*  */}
       <div className="p-6 space-y-2">
-       
-
         <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline lg:text-2xl lg:font-bold "></h3>
 
         <hr className="border border-dashed " />
@@ -82,7 +83,7 @@ const CraftCard = ({ craft }) => {
       </div>
 
       {user ? (
-        <NavLink to={`/estate-details/${user_email}`}>
+        <NavLink to={`/craft-details/${_id}`}>
           <button className="glow-on-hover font-bold" type="button">
             View Details
           </button>
@@ -90,7 +91,7 @@ const CraftCard = ({ craft }) => {
       ) : (
         <NavLink to="/login">
           <button className="glow-on-hover font-bold" type="button">
-            View Details{" "}
+            View Details
           </button>
         </NavLink>
       )}

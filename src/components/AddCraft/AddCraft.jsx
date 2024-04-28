@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const AddCraft = () => {
   const { user } = useContext(AuthContext);
@@ -63,6 +64,9 @@ const AddCraft = () => {
   return (
     <div className="container mx-auto lg:px-20 py-8">
       <div className="shadow-lg p-5 border dark:bg-[#1a2641d5] rounded-lg">
+      <Helmet>
+          <title>ArtScape | Add Craft</title>
+        </Helmet>
         {/* Heading */}
         <div className="mt-5 mb-8">
           <p className="text-center text-3xl font-semibold">
