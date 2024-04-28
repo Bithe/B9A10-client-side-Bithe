@@ -33,12 +33,12 @@ const Home = () => {
     <section className="dark:bg-gray-100 dark:text-gray-800">
       <div className="container p-6 mx-auto space-y-6 sm:space-y-12  ">
         <Helmet>
-          <title>ArtScape | Home</title>
+          <title>Hoas | Home</title>
         </Helmet>
         {/* BANNER */}
         <div className=" flex bg-[#dddbf7] rounded-3xl  ">
           <div className="container slider slider-body ">
-            <h1 className="heading">Welcome to ArtScape</h1>
+            <h1 className="heading">Welcome to ArtScape Home</h1>
             <Swiper
               effect={"coverflow"}
               grabCursor={true}
@@ -80,7 +80,7 @@ const Home = () => {
                 <img src={slide_image_6} alt="slide_image" />
               </SwiperSlide>
 
-              <div className="slider-controler gap-20 ">
+              <div className="slider-controler  gap-20 ">
                 <div className="swiper-button-prev slider-arrow bg-[#3388b5]">
                   <ion-icon name="arrow-back-outline"></ion-icon>
                 </div>
@@ -102,6 +102,7 @@ const Home = () => {
             <CraftCard key={craft._id} craft={craft}></CraftCard>
           ))}
         </div>
+      
       </div>
     </section>
   );

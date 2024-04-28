@@ -12,6 +12,8 @@ import Login from "./components/Login/Login";
 import { ToastContainer } from "react-toastify";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AuthProvider from "./components/AuthProvider/AuthProvider";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import UpdateCraft from "./components/UpdateCraft/UpdateCraft";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -21,11 +23,15 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: ()=> fetch('http://localhost:5000/crafts')
+        loader: () => fetch("http://localhost:5000/crafts"),
       },
       {
         path: "/add-craft",
-        element: <AddCraft></AddCraft>,
+        element: (
+          <PrivateRoute>
+            <AddCraft></AddCraft>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/all-art-craft",
@@ -33,7 +39,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/user-craft-list",
-        element: <UserArtCraftList></UserArtCraftList>,
+        element: (
+          <PrivateRoute>
+            <UserArtCraftList></UserArtCraftList>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/update-craft/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateCraft></UpdateCraft>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/register",

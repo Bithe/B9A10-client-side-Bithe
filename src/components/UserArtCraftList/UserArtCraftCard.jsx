@@ -2,15 +2,13 @@ import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { NavLink } from "react-router-dom";
 import "../CraftCard/Button.css";
-
-const CraftCard = ({ craft }) => {
+const UserArtCraftCard = ({ craft }) => {
   const { user } = useContext(AuthContext);
   console.log(craft);
 
   const {
-    user_email,
+    _id,
     item_name,
-    subcategory_Name,
     photo,
     rating,
     processing_time,
@@ -18,6 +16,15 @@ const CraftCard = ({ craft }) => {
     price,
     customization,
   } = craft;
+
+
+
+  // DELETE FUNC
+  const handleDelete = _id =>{
+    console.log(_id);
+
+  }
+
   return (
     <div className="border rounded-2xl p-8 ">
       <div className="">
@@ -26,7 +33,6 @@ const CraftCard = ({ craft }) => {
           alt=""
           className="object-cover rounded-xl w-full mb-4 h-60 sm:h-96 dark:bg-gray-500"
         />
-        <h2 className="mb-1 text-xl font-semibold">{subcategory_Name} </h2>
       </div>
 
       {/* STATUS */}
@@ -65,37 +71,31 @@ const CraftCard = ({ craft }) => {
           </div>
         </div>
         <h2 className="  font-semibold">{item_name}</h2>
-        <h2 className="  font-semibold">Customization Needed: {customization}</h2>
+        <h2 className="  font-semibold">
+          Customization Needed: {customization}
+        </h2>
       </div>
 
       {/*  */}
       <div className="p-6 space-y-2">
-       
-
         <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline lg:text-2xl lg:font-bold "></h3>
 
         <hr className="border border-dashed " />
 
         <div className="flex justify-between">
-          <p className="flex  items-center justify-between gap-2"></p>
+          <NavLink to={`/update-craft/${_id}`}>
+            <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+              Update
+            </button>
+          </NavLink>
+
+          <button onClick={()=>handleDelete(_id)} className="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded">
+            Delete
+          </button>
         </div>
       </div>
-
-      {user ? (
-        <NavLink to={`/estate-details/${user_email}`}>
-          <button className="glow-on-hover font-bold" type="button">
-            View Details
-          </button>
-        </NavLink>
-      ) : (
-        <NavLink to="/login">
-          <button className="glow-on-hover font-bold" type="button">
-            View Details{" "}
-          </button>
-        </NavLink>
-      )}
     </div>
   );
 };
 
-export default CraftCard;
+export default UserArtCraftCard;

@@ -3,8 +3,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useContext } from "react";
 
 const Navbar = () => {
-
-    const { user, logout } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
   // console.log(user);
   return (
     <div className="container mx-auto lg:px-20 lg:py-8">
@@ -55,22 +54,40 @@ const Navbar = () => {
               </NavLink>
 
               {/* PROTECTIVE ROUTE */}
-              <NavLink
-                to="/add-craft"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-[#1a3147] border rounded-lg p-4 font-semibold border-[#1a3147]"
-                    : ""
-                }
-              >
-                Add Craft Item
-              </NavLink>
+
+              {/* PROTECTIVE ROUTE */}
+              {user && (
+                <div className=" flex flex-col lg: justify-center gap-8">
+                  <NavLink
+                    to="/add-craft"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-[#1a3147] border rounded-lg p-4 font-semibold border-[#1a3147]"
+                        : ""
+                    }
+                  >
+                    Add Craft Item
+                  </NavLink>
+
+                  <NavLink
+                  to="/user-craft-list"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-[#1a3147] border rounded-lg p-4 text-lg font-bold border-[#1a3147]"
+                      : "text-xl "
+                  }
+                >
+                  My Art&Craft List{" "}
+                </NavLink>
+                 
+                </div>
+              )}
             </ul>
           </div>
           <a className=" lg:text-3xl font-bold ">ArtScape</a>
         </div>
 
-        {/*  */}
+        {/* larger device */}
         <div className="navbar-center hidden lg:flex gap-2 px-8">
           <ul className="menu menu-horizontal px-1 gap-8 justify-center items-center ">
             <NavLink
@@ -96,32 +113,37 @@ const Navbar = () => {
             </NavLink>
 
             {/* PROTECTIVE ROUTE */}
-            <NavLink
-              to="/add-craft"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-[#1a3147] border rounded-lg p-4 text-lg font-bold border-[#1a3147]"
-                  : "text-xl "
-              }
-            >
-              Add Craft Item
-            </NavLink>
-            <NavLink
-              to="/user-craft-list"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-[#1a3147] border rounded-lg p-4 text-lg font-bold border-[#1a3147]"
-                  : "text-xl "
-              }
-            >
-              My Art&Craft List{" "}
-            </NavLink>
+
+            {user && (
+              <div className=" flex justify-center items-center gap-8">
+                <NavLink
+                  to="/add-craft"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-[#1a3147] border rounded-lg p-4 text-lg font-bold border-[#1a3147]"
+                      : "text-xl "
+                  }
+                >
+                  Add Craft Item
+                </NavLink>
+
+                <NavLink
+                  to="/user-craft-list"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-[#1a3147] border rounded-lg p-4 text-lg font-bold border-[#1a3147]"
+                      : "text-xl "
+                  }
+                >
+                  My Art&Craft List{" "}
+                </NavLink>
+              </div>
+            )}
           </ul>
         </div>
 
-        
         <div className="navbar-end lg:gap-8">
-        {user ? (
+          {user ? (
             <div className="flex justify-center items-center ">
               {/* image from daisy */}
               <div className="dropdown dropdown-end">
@@ -180,7 +202,6 @@ const Navbar = () => {
               >
                 Login
               </NavLink>
-
               <NavLink
                 to="/register"
                 className="btn text-white font-semibold text-lg"
@@ -193,7 +214,6 @@ const Navbar = () => {
               </NavLink>{" "}
             </div>
           )}
-
         </div>
       </div>
     </div>
