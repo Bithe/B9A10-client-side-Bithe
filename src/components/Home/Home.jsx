@@ -359,7 +359,7 @@ const Home = () => {
 
       {/*  */}
       <section className="my-8 container p-6 mx-auto space-y-6 sm:space-y-12 ">
-        <div className="container mx-auto flex flex-col items-center pb-6 mb-4 md:p-10 md:px-12 border">
+        <div className="container mx-auto flex flex-col items-center pb-6 mb-4 md:p-10 md:px-12 ">
           <h1 className="text-4xl font-semibold leading-none text-center">
             What our customers are saying about us
           </h1>
@@ -377,9 +377,7 @@ const Home = () => {
                 <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
               </svg>
               <p className="px-6 py-1 text-lg italic">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Voluptatibus quibusdam, eligendi exercitationem molestias
-                possimus facere.
+              The landscape paintings featuring mountain views are captivating and evoke a sense of tranquility. The use of colors and textures brings the majestic beauty of mountains to life.
               </p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -392,7 +390,7 @@ const Home = () => {
               </svg>
             </div>
             <span className="w-12 h-1 my-2 rounded-lg dark:bg-violet-600"></span>
-            <p>Leroy Jenkins</p>
+            <p>Siri Kasper</p>
           </div>
           <div className="flex flex-col items-center max-w-lg mx-12 lg:mx-0">
             <div className="relative text-center">
@@ -411,10 +409,7 @@ const Home = () => {
                 ></path>
               </svg>
               <p className="px-6 py-1 text-lg italic">
-                Accusantium illum cupiditate harum asperiores iusto quos quasi
-                quis quae! Fugit doloribus, voluptatum quidem magnam velit
-                excepturi nobis, reprehenderit ducimus incidunt quisquam quae
-                veritatis, quos iure harum.
+              The ink outline portraits showcase a bold and dynamic style, emphasizing the contours and features of the subjects with striking simplicity.
               </p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
