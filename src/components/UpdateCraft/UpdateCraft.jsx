@@ -74,9 +74,10 @@ const UpdateCraft = () => {
             <span className="mr-3 text-[#381f55]">
               <i className="bx bxs-alarm-add"></i>
             </span>
-            <span className="dark:text- text-blue-900">
-             
-              Update Your Craft Item{" "}
+            <span className="dark:text-white">
+              <span className="text-[#381f55]">
+              </span>
+              Update Your Craft Item
             </span>
           </p>
         </div>
