@@ -1,3 +1,51 @@
+# Welcome to ArtScape
+
+## Demo
+Check out the live demo of Hoas [here](https://art-scape-client.web.app/).
+
+## Website URL
+
+## My website URL - https://art-scape-client.web.app/
+
+## Overview
+ArtScape is your ultimate destination for exploring the mesmerizing world of Painting and Drawing. Immerse yourself in a diverse array of artistic creations, from landscapes to portraits, watercolors to oil paintings, and much more.
+
+## Features
+- **Home**: Dive into the enchanting realm of art with our captivating homepage.
+- **All Art & Craft Items**: Explore a vast collection of artworks, including landscapes, portraits, watercolors, oil paintings, charcoal sketches, and cartoons.
+- **Add Craft Item**: Showcase your own artistic creations by adding them to our curated collection.
+- **My Art & Craft List**: Keep track of your favorite artworks and creations in your personalized list.
+- **Pages by Category**: Discover artworks categorized under Landscape Painting, Portrait Drawing, Watercolour Painting, Oil Painting, Charcoal Sketching, and Cartoon Drawing.
+- **Visit ArtScape Website**: [ArtScape](https://art-scape-client.web.app/)
+
+
+## Selected Category: Painting and Drawing
+- **Landscape Painting**: Featuring mountain view canvas and forest-based landscape paintings.
+- **Portrait Drawing**: Discover pencil sketch portraits, ink outline portraits, and acrylic portrait canvases.
+- **Watercolour Painting**: Explore floral watercolor art and animal watercolor portraits.
+- **Oil Painting**: Immerse yourself in realistic oil portraits and abstract oil paintings.
+- **Charcoal Sketching**: Experience figure charcoal sketches and architectural charcoal drawings.
+- **Cartoon Drawing**: Dive into the world of comic strip drawing and superhero cartoon designs.
+
+## Getting Started
+1. Visit the ArtScape website using the provided URL.
+2. Explore the different categories and artworks featured on the homepage.
+3. Use the navigation menu to browse specific categories and add your own craft items.
+4. Enjoy the beauty and creativity of the artworks showcased on ArtScape!
+
+## Contributing
+ArtScape welcomes contributions from artists and enthusiasts alike! Feel free to submit your own craft items or suggest improvements to enhance the user experience for everyone.
+
+
+
+
+
+
+
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
