@@ -25,11 +25,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-       loader: () =>
-        Promise.all([
-          fetch("http://localhost:5000/crafts"),
-          fetch("http://localhost:5000/subcategory"),
-        ]),
+        loader: () =>
+          Promise.all([
+            fetch("http://localhost:5000/crafts"),
+            fetch("http://localhost:5000/subcategory"),
+          ]),
       },
       {
         path: "/add-craft",
@@ -66,8 +66,13 @@ const router = createBrowserRouter([
 
       {
         path: "/craft-details/:id",
-        element: <CraftDetails></CraftDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`),
+        element: (
+          <PrivateRoute>
+            <CraftDetails></CraftDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/craft/${params.id}`),
       },
 
       {

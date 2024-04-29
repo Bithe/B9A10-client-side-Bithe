@@ -206,7 +206,7 @@ const Home = () => {
             </div>
             <div className="md:w-1/2">
               <img
-                src="https://plus.unsplash.com/premium_photo-1675716443562-b771d72a3da7"
+                src="https://i.ibb.co/m6wRfxB/shop.jpg"
                 alt="Coffee beans"
                 className="w-full rounded-lg shadow-lg"
               ></img>
