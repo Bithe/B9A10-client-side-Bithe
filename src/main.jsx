@@ -15,6 +15,7 @@ import AuthProvider from "./components/AuthProvider/AuthProvider";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import UpdateCraft from "./components/UpdateCraft/UpdateCraft";
 import CraftDetails from "./components/CraftDetails/CraftDetails";
+import Subcategory from "./components/Subcategory/Subcategory";
 
 const router = createBrowserRouter([
   {
@@ -73,6 +74,15 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/craft/${params.id}`),
+      },
+
+      {
+        path: "/subcategory",
+        element: (
+          <PrivateRoute>
+            <Subcategory></Subcategory>
+          </PrivateRoute>
+        ),
       },
 
       {
