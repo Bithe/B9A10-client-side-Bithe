@@ -33,25 +33,25 @@ const Home = () => {
 
   useEffect(() => {
     // Fetch crafts data
-    axios.get("http://localhost:5000/crafts")
-      .then(response => {
+    axios
+      .get("http://localhost:5000/crafts")
+      .then((response) => {
         setCrafts(response.data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Error fetching crafts:", error);
       });
 
     // Fetch subcategory data
-    axios.get("http://localhost:5000/subcategory")
-      .then(response => {
+    axios
+      .get("http://localhost:5000/subcategory")
+      .then((response) => {
         setSubcategories(response.data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Error fetching subcategories:", error);
       });
-  }, []); 
-
-
+  }, []);
 
   return (
     <section className="dark:bg-gray-100 dark:text-gray-800">
@@ -135,10 +135,51 @@ const Home = () => {
       <section className="py-6 sm:py-12 dark:bg-gray-100 dark:text-gray-800">
         <div className="container p-6 mx-auto space-y-8">
           <div className="space-y-2 text-center">
-            <h2 className="text-3xl font-bold">Our Painting and Drawing Category</h2>
-            
+            <h2 className="text-3xl font-bold">
+              Our Painting and Drawing Category
+            </h2>
           </div>
-        
+          <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
+            {subcategories.map((subcategory) => (
+              <article
+                key={subcategory._id}
+                className="flex flex-col dark:bg-gray-50"
+              >
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  aria-label="Te nulla oportere reprimique his dolorum"
+                >
+                  <img
+                    alt=""
+                    className="object-cover w-full h-52 dark:bg-gray-500"
+                    src={subcategory.photo}
+                  />
+                </a>
+                <div className="flex flex-col flex-1 p-6">
+                  <a
+                    rel="noopener noreferrer"
+                    href="#"
+                    aria-label="Te nulla oportere reprimique his dolorum"
+                  ></a>
+                  <a
+                    rel="noopener noreferrer"
+                    href="#"
+                    className="text-xl font-bold tracking-wider uppercase hover:underline dark:text-violet-600"
+                  >
+                    {subcategory.subcategory_Name}
+                  </a>
+                  <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
+                  {subcategory.description}
+                  </h3>
+                  <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-600">
+                    <span>June 1, 2020</span>
+                    <span>2.1K views</span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -148,12 +189,13 @@ const Home = () => {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="md:w-1/2 mb-8 md:mb-0">
               <h1 className="text-white font-bold text-5xl leading-tight mb-6">
-            
-
-              Each item in our shop is meticulously crafted by skilled artisans, ensuring top-notch quality and attention to detail.
+                Each item in our shop is meticulously crafted by skilled
+                artisans, ensuring top-notch quality and attention to detail.
               </h1>
               <p className="text-white text-xl mb-8">
-              With our expedited shipping options, your order will be delivered to your doorstep in no time, so you can start enjoying your new treasures right away.
+                With our expedited shipping options, your order will be
+                delivered to your doorstep in no time, so you can start enjoying
+                your new treasures right away.
               </p>
               <a
                 href="#"
@@ -194,7 +236,9 @@ const Home = () => {
                 <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
               </svg>
               <p className="px-6 py-1 text-lg italic">
-              The landscape paintings featuring mountain views are captivating and evoke a sense of tranquility. The use of colors and textures brings the majestic beauty of mountains to life.
+                The landscape paintings featuring mountain views are captivating
+                and evoke a sense of tranquility. The use of colors and textures
+                brings the majestic beauty of mountains to life.
               </p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -226,7 +270,9 @@ const Home = () => {
                 ></path>
               </svg>
               <p className="px-6 py-1 text-lg italic">
-              The ink outline portraits showcase a bold and dynamic style, emphasizing the contours and features of the subjects with striking simplicity.
+                The ink outline portraits showcase a bold and dynamic style,
+                emphasizing the contours and features of the subjects with
+                striking simplicity.
               </p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

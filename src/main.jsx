@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () =>
+       loader: () =>
         Promise.all([
           fetch("http://localhost:5000/crafts"),
           fetch("http://localhost:5000/subcategory"),
