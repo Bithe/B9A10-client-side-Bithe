@@ -54,7 +54,7 @@ const Login = () => {
   return (
     <div>
       <Helmet>
-        <title>Hoas | Login</title>
+        <title>ArtScape | Login</title>
       </Helmet>
 
       <section className="gradient-form h-full bg-neutral-200 dark:bg-neutral-700">
