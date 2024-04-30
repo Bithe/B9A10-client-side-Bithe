@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -19,54 +20,54 @@ const UpdateCraft = () => {
 
   console.log(craft);
 
-    // function for add craft
-    const handleUpdate = (e) => {
-        e.preventDefault();
-        
-    
-        // get the values from input filed
-        const item_name = e.target.item_name.value;
-        const subcategory_Name = e.target.subcategory_Name.value;
-        const customization = e.target.customization.value;
-        const short_description = e.target.short_description.value;
-        const photo = e.target.photo.value;
-        const rating = e.target.rating.value;
-        const processing_time = e.target.processing_time.value;
-        const stockStatus = e.target.stockStatus.value; 
-        const price = e.target.price.value;
-    
-        const addCraftInfo = {
-         
-          item_name,
-          subcategory_Name,
-          customization,
-          short_description,
-          photo,
-          rating,
-          processing_time,
-          stockStatus,
-          price,
-        };
-        console.log(addCraftInfo);
-    
-    
-        // TO SEND SERVER 
-        fetch(`http://localhost:5000/craft/${_id}`,{
-          method: 'PUT',
-          headers: {"content-type": "application/json"},
-          body: JSON.stringify(addCraftInfo)
-        })
-        .then(res=>res.json())
-        .then(data=>{
-          console.log(data);
-          if(data?.modifiedCount > 0){
-            toast("Craft Item updated Successfully");
-          }
-        })
-      };
+  // function for add craft
+  const handleUpdate = (e) => {
+    e.preventDefault();
+
+    // get the values from input filed
+    const item_name = e.target.item_name.value;
+    const subcategory_Name = e.target.subcategory_Name.value;
+    const customization = e.target.customization.value;
+    const short_description = e.target.short_description.value;
+    const photo = e.target.photo.value;
+    const rating = e.target.rating.value;
+    const processing_time = e.target.processing_time.value;
+    const stockStatus = e.target.stockStatus.value;
+    const price = e.target.price.value;
+
+    const addCraftInfo = {
+      item_name,
+      subcategory_Name,
+      customization,
+      short_description,
+      photo,
+      rating,
+      processing_time,
+      stockStatus,
+      price,
+    };
+    console.log(addCraftInfo);
+
+    // TO SEND SERVER
+    fetch(`http://localhost:5000/craft/${_id}`, {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(addCraftInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data?.modifiedCount > 0) {
+          toast("Craft Item updated Successfully");
+        }
+      });
+  };
 
   return (
     <div className="container mx-auto lg:px-20 py-8">
+      <Helmet>
+        <title>ArtScape | Update Craft</title>
+      </Helmet>
       <div className="shadow-lg p-5 border dark:bg-[#1a2641d5] rounded-lg">
         {/* Heading */}
         <div className="mt-5 mb-8">
@@ -75,8 +76,7 @@ const UpdateCraft = () => {
               <i className="bx bxs-alarm-add"></i>
             </span>
             <span className="dark:text-white">
-              <span className="text-[#381f55]">
-              </span>
+              <span className="text-[#381f55]"></span>
               Update Your Craft Item
             </span>
           </p>
@@ -87,21 +87,18 @@ const UpdateCraft = () => {
           <div className="flex gap-8 ">
             {/* Left side starts*/}
             <div className="flex-1">
-              
-
               {/* painting name */}
               <label className="block mt-4 mb-2 dark:text-white">
                 Painting Name
               </label>
               <input
-              defaultValue={item_name}
+                defaultValue={item_name}
                 className="w-full p-2 border rounded-md focus:outline-[#381f55]"
                 type="text"
                 placeholder="Painting Name"
                 id="item_name"
                 name="item_name"
                 required
-
               />
 
               {/* subcategory */}
@@ -159,8 +156,6 @@ const UpdateCraft = () => {
                 </option>
               </select>
 
-             
-
               {/* price */}
               <label
                 className="block mt-4 mb-2 dark:text-white"
@@ -169,8 +164,7 @@ const UpdateCraft = () => {
                 Price
               </label>
               <input
-
-              defaultValue={price}
+                defaultValue={price}
                 className="w-full p-2 border rounded-md focus:outline-[#381f55]"
                 type="number"
                 placeholder="Enter Price"
@@ -178,28 +172,26 @@ const UpdateCraft = () => {
                 name="price"
                 required
               />
-               {/* short description */}
-               <label className="block mb-2 mt-4 dark:text-white">
+              {/* short description */}
+              <label className="block mb-2 mt-4 dark:text-white">
                 Short Description
               </label>
 
-               <textarea  className="w-full p-2 border rounded-md focus:outline-[#381f55]"
+              <textarea
+                className="w-full p-2 border rounded-md focus:outline-[#381f55]"
                 type="text"
                 placeholder="Painting Name"
                 id="short_description"
                 name="short_description"
                 required
-                defaultValue={short_description}>
-
-
-               </textarea>
+                defaultValue={short_description}
+              ></textarea>
             </div>
 
             {/* left side ends */}
 
             {/* Right side */}
             <div className="flex-1">
-           
               {/* photo */}
               <label
                 className="block mt-4 mb-2 dark:text-white"
@@ -208,7 +200,7 @@ const UpdateCraft = () => {
                 Image URL
               </label>
               <input
-              defaultValue={photo}
+                defaultValue={photo}
                 className="w-full p-2 border rounded-md focus:outline-[#381f55]"
                 type="text"
                 placeholder="Enter photo URL"
@@ -225,7 +217,7 @@ const UpdateCraft = () => {
                 Rating
               </label>
               <input
-              defaultValue={rating}
+                defaultValue={rating}
                 className="w-full p-2 border rounded-md focus:outline-[#381f55]"
                 type="text"
                 placeholder="Enter Rating"
@@ -270,7 +262,6 @@ const UpdateCraft = () => {
                 className="w-full p-2 border rounded-md focus:outline-[#381f55]"
                 type="text"
                 placeholder="Select category"
-                
               >
                 <option value="In Stock" selected>
                   In stock{" "}

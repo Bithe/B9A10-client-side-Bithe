@@ -22,9 +22,9 @@ const AllArtAndCraft = () => {
         </thead>
         <tbody>
           {/* row 1 */}
-          {allCrafts.map((craft) => (
+          {allCrafts.map((craft, index) => (
             <tr key={craft.id} className="">
-              <th>1</th>
+              <th>{index+1}</th>
               <td>{craft.item_name}</td>
               <td>{craft.price}</td>
               <td>{craft.stockStatus}</td>

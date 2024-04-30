@@ -19,12 +19,12 @@ const Subcategory = () => {
             <img
               className="h-full w-full object-cover"
               src={item.photo}
-              alt="Winding mountain road"
+              alt=""
             ></img>
           </div>
 
-          <div className="max-w-lg bg-white md:max-w-2xl md:z-10 md:shadow-lg md:absolute md:top-0 md:mt-48 lg:w-3/5 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-12">
-            <div className="flex flex-col p-12 md:px-16">
+          <div className="max-w-lg bg-white md:max-w-2xl md:z-10 md:shadow-lg md:absolute md:top-0 md:mt-48 lg:w-3/5 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-12 border-blue-500 border ">
+            <div className="flex flex-col p-8 md:px-16">
               <h2 className="text-2xl font-medium uppercase text-blue-800 lg:text-4xl">
                 {item.item_name}{" "}
               </h2>
