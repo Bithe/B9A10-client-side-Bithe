@@ -92,7 +92,7 @@ const AddCraft = () => {
               <input
                 className="w-full p-2 border rounded-md focus:outline-[#381f55]"
                 type="email"
-                placeholder="Painting Name"
+                placeholder="Email"
                 id="user_email"
                 name="user_email"
 

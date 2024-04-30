@@ -22,6 +22,7 @@ import "./swiperstyle.css";
 import { Helmet } from "react-helmet-async";
 import CraftCard from "../CraftCard/CraftCard";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const user = useContext(AuthContext);
@@ -131,57 +132,56 @@ const Home = () => {
       {/*  */}
 
       {/* SUBCATEGORY */}
-
-      <section className="py-6 sm:py-12 dark:bg-gray-100 dark:text-gray-800">
-        <div className="container p-6 mx-auto space-y-8">
-          <div className="space-y-2 text-center">
-            <h2 className="text-3xl font-bold">
-              Our Painting and Drawing Category
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
-            {subcategories.map((subcategory) => (
-              <article
-                key={subcategory._id}
-                className="flex flex-col dark:bg-gray-50"
-              >
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  aria-label="Te nulla oportere reprimique his dolorum"
+        <section className="py-6 sm:py-12 dark:bg-gray-100 dark:text-gray-800">
+          <div className="container p-6 mx-auto space-y-8">
+            <div className="space-y-2 text-center">
+              <h2 className="text-3xl font-bold">
+                Our Painting and Drawing Category
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
+              {subcategories.map((subcategory) => (
+                <Link to={`/subcategory/${subcategory.subcategory_Name}`}
+                  key={subcategory._id}
+                  className="flex flex-col dark:bg-gray-50"
                 >
-                  <img
-                    alt=""
-                    className="object-cover w-full h-52 dark:bg-gray-500"
-                    src={subcategory.photo}
-                  />
-                </a>
-                <div className="flex flex-col flex-1 p-6">
                   <a
                     rel="noopener noreferrer"
                     href="#"
                     aria-label="Te nulla oportere reprimique his dolorum"
-                  ></a>
-                  <a
-                    rel="noopener noreferrer"
-                    href="#"
-                    className="text-xl font-bold tracking-wider uppercase hover:underline dark:text-violet-600"
                   >
-                    {subcategory.subcategory_Name}
+                    <img
+                      alt=""
+                      className="object-cover w-full h-52 dark:bg-gray-500"
+                      src={subcategory.photo}
+                    />
                   </a>
-                  <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
-                  {subcategory.description}
-                  </h3>
-                  <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-600">
-                    <span>June 1, 2020</span>
-                    <span>2.1K views</span>
+                  <div className="flex flex-col flex-1 p-6">
+                    <a
+                      rel="noopener noreferrer"
+                      href="#"
+                      aria-label="Te nulla oportere reprimique his dolorum"
+                    ></a>
+                    <a
+                      rel="noopener noreferrer"
+                      href="#"
+                      className="text-xl font-bold tracking-wider uppercase hover:underline dark:text-violet-600"
+                    >
+                      {subcategory.subcategory_Name}
+                    </a>
+                    <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
+                      {subcategory.description}
+                    </h3>
+                    <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-600">
+                      <span>June 1, 2020</span>
+                      <span>2.1K views</span>
+                    </div>
                   </div>
-                </div>
-              </article>
-            ))}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* ANOTHER TWO SECTION */}
       <section className="bg-blue-600 container p-6 mx-auto space-y-6 sm:space-y-12 ">
