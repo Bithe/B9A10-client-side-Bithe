@@ -45,7 +45,7 @@ const UserArtCraftList = () => {
               role="button"
               className="btn m-1 bg-[#23BE0A] text-white text-lg font-semibold "
             >
-              Sort By <AiOutlineArrowDown />
+              Filter By Customization <AiOutlineArrowDown />
             </div>
             <ul
               tabIndex={0}

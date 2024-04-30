@@ -93,6 +93,8 @@ import {
         } else {
           console.log("logout");
           setUser(null);
+          setLoader(false);
+
         }
       });
   
