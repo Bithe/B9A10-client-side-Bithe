@@ -123,7 +123,11 @@ const Home = () => {
         {/*  */}
 
         {/* CARDS */}
+        <h1 className="text-4xl font-semibold leading-none text-center">
+            Most Popular Painting and Drawing
+          </h1>
         <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
+         
           {crafts.slice(0, 6).map((craft) => (
             <CraftCard key={craft._id} craft={craft}></CraftCard>
           ))}
@@ -132,56 +136,57 @@ const Home = () => {
       {/*  */}
 
       {/* SUBCATEGORY */}
-        <section className="py-6 sm:py-12 dark:bg-gray-100 dark:text-gray-800">
-          <div className="container p-6 mx-auto space-y-8">
-            <div className="space-y-2 text-center">
-              <h2 className="text-3xl font-bold">
-                Our Painting and Drawing Category
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
-              {subcategories.map((subcategory) => (
-                <Link to={`/subcategory/${subcategory.subcategory_Name}`}
-                  key={subcategory._id}
-                  className="flex flex-col dark:bg-gray-50"
+      <section className="py-6 sm:py-12 dark:bg-gray-100 dark:text-gray-800">
+        <div className="container p-6 mx-auto space-y-8">
+          <div className="space-y-2 text-center">
+            <h2 className="text-3xl font-bold">
+              Our Painting and Drawing Category
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
+            {subcategories.map((subcategory) => (
+              <Link
+                to={`/subcategory/${subcategory.subcategory_Name}`}
+                key={subcategory._id}
+                className="flex flex-col dark:bg-gray-50"
+              >
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  aria-label="Te nulla oportere reprimique his dolorum"
                 >
+                  <img
+                    alt=""
+                    className="object-cover w-full h-52 dark:bg-gray-500"
+                    src={subcategory.photo}
+                  />
+                </a>
+                <div className="flex flex-col flex-1 p-6">
                   <a
                     rel="noopener noreferrer"
                     href="#"
                     aria-label="Te nulla oportere reprimique his dolorum"
+                  ></a>
+                  <a
+                    rel="noopener noreferrer"
+                    href="#"
+                    className="text-xl font-bold tracking-wider uppercase hover:underline dark:text-violet-600"
                   >
-                    <img
-                      alt=""
-                      className="object-cover w-full h-52 dark:bg-gray-500"
-                      src={subcategory.photo}
-                    />
+                    {subcategory.subcategory_Name}
                   </a>
-                  <div className="flex flex-col flex-1 p-6">
-                    <a
-                      rel="noopener noreferrer"
-                      href="#"
-                      aria-label="Te nulla oportere reprimique his dolorum"
-                    ></a>
-                    <a
-                      rel="noopener noreferrer"
-                      href="#"
-                      className="text-xl font-bold tracking-wider uppercase hover:underline dark:text-violet-600"
-                    >
-                      {subcategory.subcategory_Name}
-                    </a>
-                    <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
-                      {subcategory.description}
-                    </h3>
-                    <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-600">
-                      <span>June 1, 2020</span>
-                      <span>2.1K views</span>
-                    </div>
+                  <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
+                    {subcategory.description}
+                  </h3>
+                  <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-600">
+                    <span>June 1, 2020</span>
+                    <span>2.1K views</span>
                   </div>
-                </Link>
-              ))}
-            </div>
+                </div>
+              </Link>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
       {/* ANOTHER TWO SECTION */}
       <section className="bg-blue-600 container p-6 mx-auto space-y-6 sm:space-y-12 ">
