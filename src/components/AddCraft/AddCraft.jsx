@@ -242,13 +242,13 @@ const AddCraft = () => {
               </label>
               <input
                 className="w-full p-2 border rounded-md focus:outline-[#381f55]"
-                type="text"
+                type="number"
                 placeholder="Enter Rating"
                 id="rating"
                 name="rating"
                 maxLength={1}
-                max={1}
-                min={0}
+               
+                required
               />
 
               {/* processing_time */}

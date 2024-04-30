@@ -61,8 +61,6 @@ const UpdateCraft = () => {
           toast("Craft Item updated Successfully");
         }
       })
-      e.target.reset();
-
 
 
   };

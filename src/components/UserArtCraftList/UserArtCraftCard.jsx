@@ -49,8 +49,16 @@ const UserArtCraftCard = ({ craft, userCraft, setUserCraft, displayCraft, setDis
               icon: "success"
             } 
           )
-          const remaining = displayCraft.filter(artCraft=> artCraft._id !== _id );
-          setDisplayCraft([...remaining]);
+          // const remaining = userCraft.filter(artCraft=> artCraft._id !== _id );
+          // setUserCraft([...remaining]);
+          if (displayCraft && displayCraft.length > 0) {
+            const remaining = displayCraft.filter(artCraft => artCraft._id !== _id);
+            setDisplayCraft([...remaining]);
+          } else {
+            const remaining = userCraft.filter(artCraft => artCraft._id !== _id);
+            setUserCraft([...remaining]);
+          }
+
           }
 
         })
