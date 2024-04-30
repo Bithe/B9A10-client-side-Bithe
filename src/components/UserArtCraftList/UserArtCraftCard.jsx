@@ -5,9 +5,9 @@ import "../CraftCard/Button.css";
 import Swal from 'sweetalert2';
 
 
-const UserArtCraftCard = ({ craft, userCraft, setUserCraft }) => {
+const UserArtCraftCard = ({ craft, userCraft, setUserCraft, displayCraft, setDisplayCraft }) => {
   const { user } = useContext(AuthContext);
-  console.log(craft);
+  console.log(craft);  
 
   const {
     _id,
@@ -49,8 +49,8 @@ const UserArtCraftCard = ({ craft, userCraft, setUserCraft }) => {
               icon: "success"
             } 
           )
-          const remaining = userCraft.filter(artCraft=> artCraft._id !== _id );
-          setUserCraft([...remaining]);
+          const remaining = displayCraft.filter(artCraft=> artCraft._id !== _id );
+          setDisplayCraft([...remaining]);
           }
 
         })

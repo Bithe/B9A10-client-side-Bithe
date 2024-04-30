@@ -60,7 +60,11 @@ const UpdateCraft = () => {
         if (data?.modifiedCount > 0) {
           toast("Craft Item updated Successfully");
         }
-      });
+      })
+      e.target.reset();
+
+
+
   };
 
   return (
@@ -107,12 +111,13 @@ const UpdateCraft = () => {
               </label>
 
               <select
-                name="subcategory_Name"
-                id="subcategory_Name"
-                className="w-full p-2 border rounded-md focus:outline-[#381f55]"
-                type="text"
-                placeholder="Select category"
-              >
+              name="subcategory_Name"
+              id="subcategory_Name"
+              className="w-full p-2 border rounded-md focus:outline-[#381f55]"
+              type="text"
+              placeholder="Select category"
+              defaultValue={subcategory_Name} // Set default value here
+            >
                 <option value="Landscape Painting" selected>
                   Landscape Painting
                 </option>
@@ -147,6 +152,7 @@ const UpdateCraft = () => {
                 className="w-full p-2 border rounded-md focus:outline-[#381f55]"
                 type="text"
                 placeholder="Select category"
+                defaultValue={customization}
               >
                 <option value="Yes" selected>
                   Yes{" "}
@@ -234,12 +240,13 @@ const UpdateCraft = () => {
               </label>
 
               <select
-                name="processing_time"
-                id="processing_time"
-                className="w-full p-2 border rounded-md focus:outline-[#381f55]"
-                type="text"
-                placeholder="Select category"
-              >
+              name="processing_time"
+              id="processing_time"
+              className="w-full p-2 border rounded-md focus:outline-[#381f55]"
+              type="text"
+              placeholder="Select category"
+              defaultValue={processing_time} // Set default value here
+            >
                 <option value="1-2 weeks" selected>
                   1-2 weeks{" "}
                 </option>
@@ -262,6 +269,7 @@ const UpdateCraft = () => {
                 className="w-full p-2 border rounded-md focus:outline-[#381f55]"
                 type="text"
                 placeholder="Select category"
+                defaultValue={stockStatus}
               >
                 <option value="In Stock" selected>
                   In stock{" "}

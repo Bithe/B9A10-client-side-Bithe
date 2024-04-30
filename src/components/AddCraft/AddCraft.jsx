@@ -59,6 +59,8 @@ const AddCraft = () => {
         toast("Craft Item added Successful");
       }
     })
+
+    e.target.reset();
   };
 
   return (

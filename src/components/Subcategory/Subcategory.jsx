@@ -13,9 +13,9 @@ const Subcategory = () => {
       {subcategory.map((item) => (
         <div
           key={item._id}
-          className="relative flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl lg:mt-12 xl:max-w-6xl py-10 dark:text-black text-black "
+          className=" flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl lg:mt-12 xl:max-w-6xl py-10 dark:text-black text-black "
         >
-          <div className="w-full h-64 lg:w-1/2 lg:h-auto py-8">
+          <div className="w-full lg:w-1/2 lg:h-auto py-8">
             <img
               className="h-full w-full object-cover"
               src={item.photo}
@@ -23,7 +23,7 @@ const Subcategory = () => {
             ></img>
           </div>
 
-          <div className="max-w-lg bg-white md:max-w-2xl md:z-10 md:shadow-lg md:absolute md:top-0 md:mt-48 lg:w-3/5 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-12 border-blue-500 border ">
+          <div className="max-w-lg bg-white md:max-w-2xl md:shadow-lg  md:top-0 md:mt-48 lg:w-3/5 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-12 border-blue-500 border ">
             <div className="flex flex-col p-8 md:px-16">
               <h2 className="text-2xl font-medium uppercase text-blue-800 lg:text-4xl">
                 {item.item_name}{" "}

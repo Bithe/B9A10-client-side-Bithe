@@ -9,6 +9,29 @@ const UserArtCraftList = () => {
 
   const [userCraft, setUserCraft] = useState([]);
 
+    // FILTER BY CUS
+    const [displayCraft, setDisplayCraft] = useState([]);
+
+ // FILTER
+const handleFilter = filter =>{
+  console.log(filter);
+
+  if (filter === "all") {
+    setDisplayCraft(userCraft);
+  } 
+  else if (filter === "yes") {
+    const filterCraft = userCraft.slice().sort((a, b) => {
+      return b.rating - a.rating;
+    });
+    setDisplayCraft(filterCraft);
+  } 
+  else if (filter === "no") {
+    const filterCraft = userCraft.slice().sort((a, b) => {
+      return b.totalPages - a.totalPages;
+    });
+    setDisplayCraft(filterCraft);
+  }
+}
 
   useEffect(() => {
     fetch(`https://art-scape-server.vercel.app/crafts/${user?.email}`)
@@ -16,14 +39,14 @@ const UserArtCraftList = () => {
       .then((data) => {
         console.log(data);
         setUserCraft(data);
+        setDisplayCraft(data);
       });
   }, [user]);
 
 
 
-  // const handleSort = sort =>{
-  //   console.log(sort);
-  // }
+
+
   return (
     <section className="dark:bg-gray-100 dark:text-gray-800">
     <div className="container p-6 mx-auto space-y-6 sm:space-y-12  ">
@@ -51,8 +74,11 @@ const UserArtCraftList = () => {
               <a>All</a>
             </li>
 
-            <li >
-              <a>Customization</a>
+            <li onClick={()=> handleFilter()} >
+              <a>Customization: Yes</a>
+            </li>
+            <li onClick={()=> handleFilter()}>
+              <a>Customization: No</a>
             </li>
 
          
@@ -63,7 +89,7 @@ const UserArtCraftList = () => {
 
        {/* CARDS */}
        <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
-          {userCraft.map((craft) => (
+          {displayCraft.map((craft) => (
             <UserArtCraftCard key={craft._id} craft={craft}
             userCraft={userCraft} setUserCraft={setUserCraft}></UserArtCraftCard>
           ))}

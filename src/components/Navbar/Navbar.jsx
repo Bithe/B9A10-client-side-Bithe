@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useContext, useEffect, useState } from "react";
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
@@ -47,10 +48,7 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <NavLink  
-              data-tip="Tooltip content here"
-              data-place="bottom" 
-              data-type="dark" 
+              <NavLink
                 to="/"
                 className={({ isActive }) =>
                   isActive
@@ -108,7 +106,11 @@ const Navbar = () => {
         {/* larger device */}
         <div className="navbar-center hidden lg:flex gap-2 px-8">
           <ul className="menu menu-horizontal px-1 gap-8 justify-center items-center ">
+            <Tooltip id="home" place="top" effect="solid"></Tooltip>
             <NavLink
+              data-tooltip-id="home"
+              data-tooltip-content="Home"
+              data-tooltip-place="top"
               to="/"
               className={({ isActive }) =>
                 isActive
@@ -119,8 +121,13 @@ const Navbar = () => {
               Home
             </NavLink>
 
+            <Tooltip id="all-art-craft" place="top" effect="solid"></Tooltip>
+
             <NavLink
               to="/all-art-craft"
+              data-tooltip-id="all-art-craft"
+              data-tooltip-content="All Art & craft Items"
+              data-tooltip-place="top"
               className={({ isActive }) =>
                 isActive
                   ? "dark:bg-white dark:text-gray-900 border rounded-lg p-4 text-lg font-bold border-[#1a3147] bg-white text-black"
@@ -134,7 +141,12 @@ const Navbar = () => {
 
             {user && (
               <div className=" flex justify-center items-center gap-8">
+                <Tooltip id="add-craft" place="top" effect="solid"></Tooltip>
+
                 <NavLink
+                data-tooltip-id="add-craft"
+                data-tooltip-content="Add Craft Item"
+                data-tooltip-place="top"
                   to="/add-craft"
                   className={({ isActive }) =>
                     isActive
@@ -145,7 +157,12 @@ const Navbar = () => {
                   Add Craft Item
                 </NavLink>
 
+                <Tooltip id="user-craft-list" place="top" effect="solid"></Tooltip>
+
                 <NavLink
+                data-tooltip-id="user-craft-list"
+                data-tooltip-content="My Art&Craft List"
+                data-tooltip-place="top"
                   to="/user-craft-list"
                   className={({ isActive }) =>
                     isActive
