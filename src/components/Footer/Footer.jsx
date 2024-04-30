@@ -14,7 +14,7 @@ const Footer = () => {
           "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)",
       }}
     >
-      <aside>
+      <aside className="text-white">
         <h1 className="text-7xl font-bold p-4">ArtScape</h1>
         <p className="text-2xl font-bold">
           ArtScape <br />
