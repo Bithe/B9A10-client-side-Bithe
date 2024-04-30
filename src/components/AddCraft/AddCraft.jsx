@@ -47,7 +47,7 @@ const AddCraft = () => {
 
 
     // TO SEND SERVER 
-    fetch("https://art-scape-server-6e7ex3me3-bithes-projects.vercel.app/crafts",{
+    fetch("https://art-scape-server.vercel.app/crafts",{
       method: 'POST',
       headers: {"content-type": "application/json"},
       body: JSON.stringify(addCraftInfo)
@@ -192,7 +192,7 @@ const AddCraft = () => {
 
                <textarea  className="w-full p-2 border rounded-md focus:outline-[#381f55]"
                 type="text"
-                placeholder="Painting Name"
+                placeholder="Short description"
                 id="short_description"
                 name="short_description"
                 required>

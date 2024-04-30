@@ -36,7 +36,7 @@ const UserArtCraftCard = ({ craft, userCraft, setUserCraft }) => {
     }).then((result) => {
       if (result.isConfirmed) {
     
-        fetch(`https://art-scape-server-6e7ex3me3-bithes-projects.vercel.app/crafts/${_id}`, {
+        fetch(`https://art-scape-server.vercel.app/crafts/${_id}`, {
           method: 'DELETE'
         })
         .then(res=>res.json())
@@ -61,6 +61,7 @@ const UserArtCraftCard = ({ craft, userCraft, setUserCraft }) => {
 
   return (
     <div className="border rounded-2xl p-8 ">
+        
       <div className="">
         <img
           src={photo}

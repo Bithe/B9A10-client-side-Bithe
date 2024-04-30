@@ -23,6 +23,7 @@ import { Helmet } from "react-helmet-async";
 import CraftCard from "../CraftCard/CraftCard";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Typewriter, useTypewriter } from "react-simple-typewriter";
 
 const Home = () => {
   const user = useContext(AuthContext);
@@ -32,10 +33,15 @@ const Home = () => {
   const [crafts, setCrafts] = useState([]);
   const [subcategories, setSubcategories] = useState([]);
 
+  const [text] = useTypewriter({
+    words: ["ArtScape"],
+    loop: 0,
+  });
+
   useEffect(() => {
     // Fetch crafts data
     axios
-      .get("https://art-scape-server-6e7ex3me3-bithes-projects.vercel.app/crafts")
+      .get("https://art-scape-server.vercel.app/crafts")
       .then((response) => {
         setCrafts(response.data);
       })
@@ -45,7 +51,7 @@ const Home = () => {
 
     // Fetch subcategory data
     axios
-      .get("https://art-scape-server-6e7ex3me3-bithes-projects.vercel.app/subcategory")
+      .get("https://art-scape-server.vercel.app/subcategory")
       .then((response) => {
         setSubcategories(response.data);
       })
@@ -64,7 +70,10 @@ const Home = () => {
         {/* BANNER */}
         <div className=" flex bg-white rounded-3xl  ">
           <div className="container slider slider-body ">
-            <h1 className="heading text-black">Welcome to ArtScape Home</h1>
+            <h1 className="heading text-black">
+              Welcome to our <span className="text-blue-800">{text}</span> 
+            </h1>
+
             <Swiper
               effect={"coverflow"}
               grabCursor={true}
@@ -123,11 +132,10 @@ const Home = () => {
         {/*  */}
 
         {/* CARDS */}
-        <h1 className="text-4xl font-semibold leading-none text-center">
-            Most Popular Painting and Drawing
-          </h1>
+        <h1 className="text-4xl font-semibold leading-none text-center p-6">
+          Most Popular Painting and Drawing
+        </h1>
         <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
-         
           {crafts.slice(0, 6).map((craft) => (
             <CraftCard key={craft._id} craft={craft}></CraftCard>
           ))}
