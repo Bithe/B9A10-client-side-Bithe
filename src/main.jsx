@@ -28,8 +28,8 @@ const router = createBrowserRouter([
         element: <Home></Home>,
         loader: () =>
           Promise.all([
-            fetch("http://localhost:5000/crafts"),
-            fetch("http://localhost:5000/subcategory"),
+            fetch("https://art-scape-server-6e7ex3me3-bithes-projects.vercel.app/crafts"),
+            fetch("https://art-scape-server-6e7ex3me3-bithes-projects.vercel.app/subcategory"),
           ]),
       },
       {
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       {
         path: "/all-art-craft",
         element: <AllArtAndCraft></AllArtAndCraft>,
-        loader: () => fetch("http://localhost:5000/crafts"),
+        loader: () => fetch("https://art-scape-server-6e7ex3me3-bithes-projects.vercel.app/crafts"),
       },
       {
         path: "/user-craft-list",
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/craft/${params.id}`),
+          fetch(`https://art-scape-server-6e7ex3me3-bithes-projects.vercel.app/craft/${params.id}`),
       },
 
       {
@@ -73,7 +73,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/craft/${params.id}`),
+          fetch(`https://art-scape-server-6e7ex3me3-bithes-projects.vercel.app/craft/${params.id}`),
       },
 
       {
@@ -83,7 +83,7 @@ const router = createBrowserRouter([
             <Subcategory></Subcategory>
           </PrivateRoute>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/subcategory/${params['subcategory-Name']}`),
+        loader: ({ params }) => fetch(`https://art-scape-server-6e7ex3me3-bithes-projects.vercel.app/subcategory/${params['subcategory-Name']}`),
       },
 
       {

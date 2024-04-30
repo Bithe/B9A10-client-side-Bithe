@@ -11,7 +11,7 @@ const UserArtCraftList = () => {
 
 
   useEffect(() => {
-    fetch(`http://localhost:5000/crafts/${user?.email}`)
+    fetch(`https://art-scape-server-6e7ex3me3-bithes-projects.vercel.app/crafts/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

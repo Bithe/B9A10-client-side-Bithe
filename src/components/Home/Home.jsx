@@ -35,7 +35,7 @@ const Home = () => {
   useEffect(() => {
     // Fetch crafts data
     axios
-      .get("http://localhost:5000/crafts")
+      .get("https://art-scape-server-6e7ex3me3-bithes-projects.vercel.app/crafts")
       .then((response) => {
         setCrafts(response.data);
       })
@@ -45,7 +45,7 @@ const Home = () => {
 
     // Fetch subcategory data
     axios
-      .get("http://localhost:5000/subcategory")
+      .get("https://art-scape-server-6e7ex3me3-bithes-projects.vercel.app/subcategory")
       .then((response) => {
         setSubcategories(response.data);
       })
