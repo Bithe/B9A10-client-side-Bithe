@@ -53,6 +53,7 @@ Navigate to the Project Directory:
 - npm run dev
 - Open in Browser:
 Open http://localhost:3000 in your web browser to see the ArtScape project in action.
+- Create a .env file in the root directory.
 
 Troubleshooting
 Port Conflicts: If the default port (3000) is already in use, specify a different port by using:
