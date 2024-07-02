@@ -33,10 +33,35 @@ ArtScape is your ultimate destination for exploring the mesmerizing world of Pai
 3. Use the navigation menu to browse specific categories and add your own craft items.
 4. Enjoy the beauty and creativity of the artworks showcased on ArtScape!
 
+
+### Prerequisites
+
+Ensure you have the following installed on your machine:
+- **Node.js** (preferably the latest LTS version)
+- **npm** or **yarn** (package managers for Node.js)
+
+### Installation
+
+Follow these steps to clone and run the project locally:
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-username/art-scape.git
+Navigate to the Project Directory:
+cd art-scape
+npm install
+npm run dev
+Open in Browser:
+Open http://localhost:3000 in your web browser to see the ArtScape project in action.
+
+Troubleshooting
+Port Conflicts: If the default port (3000) is already in use, specify a different port by using:
+
+bash
+npm run dev -- --port 3001
+
 ## Contributing
 ArtScape welcomes contributions from artists and enthusiasts alike! Feel free to submit your own craft items or suggest improvements to enhance the user experience for everyone.
-
-
 
 
 
