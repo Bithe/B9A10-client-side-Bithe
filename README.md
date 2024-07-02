@@ -49,10 +49,9 @@ Follow these steps to clone and run the project locally:
    git clone https://github.com/Bithe/B9A10-client-side-Bithe.git
 
 Navigate to the Project Directory:
-cd art-scape
-npm install
-npm run dev
-Open in Browser:
+- npm install
+- npm run dev
+- Open in Browser:
 Open http://localhost:3000 in your web browser to see the ArtScape project in action.
 
 Troubleshooting
