@@ -46,7 +46,9 @@ Follow these steps to clone and run the project locally:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/art-scape.git
+[   git clone https://github.com/your-username/art-scape.git
+](https://github.com/Bithe/B9A10-client-side-Bithe.git)
+
 Navigate to the Project Directory:
 cd art-scape
 npm install
